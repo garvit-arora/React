@@ -1,6 +1,8 @@
+import React from "react";
 import { useState } from "react";
 import "./App.css";
 import { TodoContext, TodoProvider } from "./contexts";
+import TodoForm from "./components/TodoForm";
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
               Manage Your Todos
             </h1>
             <div className="mb-4">
-              {/* Todo form goes here */}
+              <TodoForm />
               </div>
             <div className="flex flex-wrap gap-y-3">
               {/*Loop and Add TodoItem here */}
