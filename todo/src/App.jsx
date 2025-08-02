@@ -42,13 +42,15 @@ function App() {
 
   return (
     <>
+    <>
+    
       <TodoProvider
         value={{ todos, addTodo, toggleComplete, deleteTodo, updateTodo }}
       >
         <div className="bg-[#172842] min-h-screen py-8">
-          <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
-            <h1 className="text-2xl font-bold text-center mb-8 mt-2">
-              Manage Your Todos
+          <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-yellow-50">
+            <h1 className="text-3xl font-bold text-center mb-9 mt-8">
+              To-Do List
             </h1>
             <div className="mb-4">
               <TodoForm />
@@ -64,6 +66,7 @@ function App() {
           </div>
         </div>
       </TodoProvider>
+      </>
     </>
   );
 }
