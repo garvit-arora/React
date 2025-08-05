@@ -7,7 +7,9 @@ import {addTodo} from '../features/todo/todoSlice'
 function AddTodo() {
     const [input,setInput] = useState('')
     const dispatch = useDispatch()
-    const [selector,useSelector] = useSelector()
+    // const [selector,useSelector] = useSelector()
+    
+    
 
     const addTodoHandler = (e)=>{
         e.preventDefault();
