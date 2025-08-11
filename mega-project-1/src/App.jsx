@@ -1,10 +1,27 @@
-import React from 'react'
+import {useDispatch} from 'react-redux'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import './App.css'
+import authService from './appwrite/auth'
+import {} from "./store/authSlice"
 
 function App() {
-  console.log(import.meta.env.VITE_APP_APPWRITE_URL);
-  
+  const [loading,setLoading] = useState(true);
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    authService.getUserAccount()
+    .then((userData)=>{
+      if (userData) {
+        dispatch(login({userData}))
+      } else {
+        
+      }
+    })
+    .finally()
+  })
+
+
+
   return (
     <>
         <h1>Mega Project</h1>
