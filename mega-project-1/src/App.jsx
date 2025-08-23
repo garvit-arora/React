@@ -3,7 +3,9 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import './App.css'
 import authService from './appwrite/auth'
-import {} from "./store/authSlice"
+import { logout } from "./store/authSlice"
+import {Header}   from "../src/components/index"
+import {Footer}   from "../src/components/index"
 
 function App() {
   const [loading,setLoading] = useState(true);
@@ -14,20 +16,24 @@ function App() {
       if (userData) {
         dispatch(login({userData}))
       } else {
-        
+          dispatch(logout());
       }
     })
-    .finally()
-  })
-
-
-
-  return (
+    .finally(()=>setLoading(false))
+  },[])
+  return !loading ? (
     <>
-    
-        <h1>Mega Project</h1>
-    </>
-  )
+    <div className='min-h-screen flex flex-wrap content-between bg-gray-400 '></div>
+    <div className="w-full block ">
+      <Header />
+      <main>
+      {/* <Outlet /> */}TODO:
+      </main>
+      <Footer />
+    </div>
+      </>
+  ) : null
 }
+
 
 export default App
