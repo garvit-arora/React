@@ -27,12 +27,16 @@ function App() {
       <div className="min-h-screen flex flex-wrap content-between bg-gray-400 ">
         <div className="w-full block ">
           <Header />
-          <main className="text-center">{/* <Outlet /> */}TODO:</main>
+          <main className="text-center">{/* <Outlet /> */}
+            {/* Space for Outlet */}
+            TODO:</main>
           <Footer />
         </div>
       </div>
     </>
   ) : null;
 }
+
+
 
 export default App;
